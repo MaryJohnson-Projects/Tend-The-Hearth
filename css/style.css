@@ -1,0 +1,491 @@
+/* Variables */
+* {
+    --primary-color: #e7b76f;
+    --secondary-color: #cd7656;
+    --tertiary-color: #d4545a;
+    --dark-color: #1d1d20;
+    --light-color: #e4dfda;
+}
+
+/*================================================*/
+/* Reset & General Styles */
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    min-height: 100vh;
+    line-height: 1.5;
+    
+    background-image: 
+        linear-gradient(to top, rgba(0,0,0,0) 20%, rgba(0,0,0,1) 100%),
+        url(../images/141.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    color: var(--dark-color);
+}
+
+input,
+textarea {
+    font: inherit;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: var(--tertiary-color);
+}
+
+ul {
+    list-style-type: none;
+}
+
+header, footer{
+    background-color:  var(--dark-color);
+    color: var(--light-color);
+    z-index: 1;
+}
+
+.nav-hide {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.hide {
+    display: none;
+}
+
+/*================================================*/
+/*General layouts*/
+
+body {
+    display: grid;
+    grid-template-rows: 4rem 1fr 2rem;
+    grid-template-columns: 15% 70% 15%;
+}
+header {  
+    grid-column: 1 / 4;
+    grid-row: 1;
+    position: sticky;
+    top: 0;
+}
+main {
+    grid-column: 2;
+    grid-row: -3;
+}
+footer {
+    grid-column: 1 / 4;
+    grid-row: -2; 
+    bottom: 0;
+}
+
+
+/*================================================*/
+/*Header styles*/
+
+header img {
+    margin: 0.5em 0.5em -0.2em 1em;
+    /* Using https://isotropic.co/tool/hex-color-to-css-filter/ to color svg.*/
+    filter: invert(82%) sepia(14%) saturate(1253%) hue-rotate(346deg) brightness(89%) contrast(105%);
+    height: min(4.5vw, 2rem);
+}
+
+h1 {
+    font-family: luminari, fantasy, serif;
+    color: var(--light-color);
+    text-align: right;
+    font-size: min(4.5vw, 2rem);
+}
+
+h1 a {
+    color: var(--light-color);
+}
+
+nav ul {
+    background-color: var(--dark-color);
+    padding-bottom: 0.5rem;
+}
+
+nav li {
+    padding-left: 1rem;
+    font-size: min(2.75vw,2rem);
+} 
+
+nav a:hover {
+    color: var(--tertiary-color);
+}
+
+/*================================================*/
+/*Header layouts*/
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    display: inline;
+}
+
+
+.nav-dropdown {
+    grid-column: 3;
+    grid-row: 1;
+    position: sticky;
+    top: 4rem;
+
+    transition: 100ms opacity ease-in-out;
+}
+
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: right;
+}
+
+.nav-icon:hover {
+    cursor: pointer;
+}
+
+
+/*================================================*/
+/*Main styles*/
+
+main {
+    padding: 1rem;
+    background-color: var(--light-color);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.7em;
+    padding-top: 1em;
+}
+
+h4 {
+    color: var(--dark-color);
+    font-size: 1.2em;
+    padding-top: 1em;
+}
+
+h5 {
+    color: var(--dark-color);
+    font-size: 1em;
+    text-indent: 1em;
+    padding-top: 1em;
+}
+
+p {
+    text-indent: 2em;
+}
+
+/*===============================================*/
+/* Home Page layout */
+.home-body{
+    display: grid;
+    grid-template-rows: 4rem 270px 1fr 2rem;
+    grid-template-columns: 15% 70% 15%;
+}
+.splash-section{
+    grid-column: 1/4;
+    grid-row: 2;
+
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+.splash-text{
+    grid-column: 2;   
+}
+
+.img-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 1em;
+
+    justify-items: center;
+    text-align: center;
+    background-color: var(--dark-color);
+}
+
+/*===============================================*/
+/* Home Page styles */
+.home-body{
+    background-image: 
+        linear-gradient(to top, rgba(0,0,0,0) 20%, rgba(0,0,0,1) 50%),
+        url(../images/141.jpg);
+}
+
+.splash-section{
+    background-image: 
+        linear-gradient(to right, rgba(0,0,0,0) 60%, rgba(0,0,0,1) 100%),
+        linear-gradient(to left, rgba(0,0,0,0) 60%, rgba(0,0,0,1) 100%),
+        url(../images/splash.png);
+    background-repeat: repeat ;
+    background-position: bottom;
+
+    align-items: center;
+}
+
+.splash-text{
+    color: var(--light-color);
+    text-align: center;
+}
+
+.splash-text h2{
+    font-family: luminari, fantasy, serif;
+    font-size: min(5em, 6vw);
+}
+.splash-text h3{
+    font-style: italic;
+    font-weight: 100;
+    font-family: luminari, fantasy, serif;
+    font-size: min(3em, 2vw);
+    padding-top: 0em;
+    padding-bottom: 1em;
+}
+
+
+.img-section img {
+    width: min(7em,15vw);
+    height: min(7em,15vw);
+
+    filter: invert(82%) sepia(14%) saturate(1253%) hue-rotate(346deg) brightness(89%) contrast(105%);
+}
+
+.img-section a{
+    font-weight: bold;
+}
+
+.img-section a:hover{
+    filter: sepia(12%) saturate(2338%) hue-rotate(329deg) brightness(89%) contrast(99%);
+}
+
+.testimonials{
+    padding: 1em;
+}
+
+.testimonials li {
+    padding: 1em 0em;
+}
+
+.testimonial-name {
+    text-align: right;
+}
+
+/*===============================================*/
+/*Handbook Styles */
+.handbook-main{
+    display: grid;
+
+    grid-template-columns: 11em 1fr;
+}
+
+.handbook-content ul {
+    padding-left: 2em;
+}
+
+.handbook-content li {
+    background-image: url(../images/bonfire.svg);
+    background-repeat: no-repeat;
+    background-size: 0.75em 0.75em;
+    padding-left: 1em;
+    background-position: 0 0.2em;
+}
+
+.handbook-main section, .handbook-main div{
+    padding: 0.5em;
+}
+
+aside{
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 1em;
+    position: sticky;
+    top: 5em;
+}
+
+h6 {
+    text-align: center;
+    font-size: 1em;
+    font-weight: normal;
+    text-indent: 0em;
+}
+
+aside li li {
+    padding-left: 1em;
+}
+
+.handbook-content h3:hover, 
+.handbook-content h4:hover, 
+.handbook-content h5:hover {
+    text-decoration: underline dotted 2px;
+    cursor: pointer;
+}
+
+/*===============================================*/
+/*Download layout*/
+
+.download-main {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 4em 1fr 3fr;
+    
+}
+
+.download-main h2 {
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+
+
+.most-recent-download {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+table {
+    grid-column: 1 / 3;
+    grid-row: 3;
+}
+
+
+/*===============================================*/
+/*Download styles*/
+
+.most-recent-download {
+    margin: 0.5em;
+    text-align: center;
+    grid-gap: 0.5em;
+    align-items: center;
+}
+
+.download-btn{
+    background-color: var(--dark-color);
+    padding: 0.5em;
+}
+
+.download-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+.download-main p a {
+    color: var(--secondary-color);
+}
+
+.download-main p a:hover {
+    color: var(--tertiary-color);
+}
+
+table {
+    border: 3px solid var(--tertiary-color);
+    border-collapse: collapse;
+}
+
+th {
+    background-color: var(--tertiary-color);
+    color: var(--dark-color);
+}
+
+th, td {
+    text-align: center;
+}
+
+td {
+    border-bottom: 2px solid var(--tertiary-color);
+    background-color: var(--dark-color);
+    color: var(--light-color);
+}
+
+td ul {
+    list-style-type: disc;
+}
+
+.change-notes {
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-align: left;
+}
+
+
+/*================================================*/
+/*Contact layouts*/
+
+.contact-main {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-template-rows: 4em 1fr;  
+}
+
+.contact-main h2{
+    grid-column: 1/3;
+}
+
+/*================================================*/
+/*Contact styles*/
+
+.contact-main p{
+    padding: 0em 1em;
+}
+
+input[type="text"],
+input[type="email"], 
+textarea{
+  border: 2px solid  var(--dark-color);
+  margin-bottom: 0.5em;
+  width: 100%;
+  padding: 0.2em;
+}
+
+textarea {
+    height: 10em;
+}
+
+
+input[type="submit"] {
+    background-color: var(--dark-color);
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.5em 1em; 
+}
+
+input[type="submit"]:hover {
+    color: var(--tertiary-color);
+}
+
+
+/*================================================*/
+/*Footer layouts*/
+
+#quote {
+    font-style: italic;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0em 2em;
+}
